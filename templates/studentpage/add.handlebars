@@ -1,0 +1,21 @@
+<h1>Select subject by student</h1>
+
+<div class="container">
+    <form action="/studentpage" method="post">
+        <select name="subjectsForm">
+            <option selected>Open this select menu</option>
+            {{#each subject}}
+             <option value="{{_id}}" >{{name}}</option>
+          {{/each}}
+            </select> 
+          
+            <button type="submit" id="add-button">Add</button>
+</form>
+</div>
+
+<div class="container">
+    {{#each getStudent}}
+    <h1>{{subjects.name}} </h1>
+        {{/each}}
+    <h2>basm</h2>
+</div>
