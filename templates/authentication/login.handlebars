@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Management System - Login</title>
+
+        <!-- Latest compiled and minified CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/login/style.css">
+</head>
+
+<body>
+    <div class="login-page">
+        <h1>Login</h1>
+        <div class="form">
+            <form class="login-form" action="/login" method="post">
+                <input type="text" name="email" placeholder="Email" />
+                <input type="password" name="password" placeholder="Password" />
+                <button>Login</button>
+
+                    <input type="radio" id="admin" name="user_type" value="admin">
+                    <label for="admin">Administrator</label>
+
+                    <input type="radio" id="doctor" name="user_type" value="doctor">
+                    <label for="doctor">Doctor</label>
+
+                    <input type="radio" id="student" name="user_type" value="student">
+                    <label for="student">Student </label>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
