@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student</title>
+    <link rel="stylesheet" type="text/css" href="/css/admin.css">
+</head>
+
+<body>
+    <h1>Student</h1>
+    <ul>
+        {{#each students}}
+        <a href="/students/{{_id}}/create_subject">
+            <li>{{username}}</li>
+        </a>
+        {{/each}}
+    </ul>
+
+    <a href="/students/create"><button id="edit-btn">Add</button></a>
+</body>
+
+</html>

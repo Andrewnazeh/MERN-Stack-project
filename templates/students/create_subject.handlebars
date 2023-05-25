@@ -1,0 +1,19 @@
+ <h1>Add Subjects to student {{user.username}} </h1>
+ 
+ 
+  <form action="/students/{{user._id}}" method="post">
+        <select class="form-select" name="subjects">
+        <option selected>Open this select menu</option>
+        {{#each subjects}}
+          <option value="{{_id}}">{{name}}</option>
+        {{/each}}
+            </select> 
+          <select class="form-select" name="grade">
+        <option selected>Open this select menu</option>
+       
+          <option >true</option>
+          <option >False</option>
+      
+            </select> 
+            <button type="submit" id="add-button">Add</button>
+            </form>
