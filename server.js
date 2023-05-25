@@ -4,6 +4,8 @@ import { engine } from "express-handlebars";
 import dotenv from "dotenv";
 import routerDepartments from './routers/departments.js';
 import routerSubjects from './routers/subjects.js';
+import routerDoctors from "./routers/doctors.js";
+
 dotenv.config();
 
 mongoose.connect(process.env.mongConnection);
@@ -21,9 +23,16 @@ app.use("/departments", routerDepartments);
 // ++++++++ Using route of subjects ++++++++ //
 app.use("/subjects", routerSubjects);
 
+
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', './templates');
+
+
+// ++++++++ Using route of doctors ++++++++ //
+
+app.use("/doctors",routerDoctors);
+
 
 // ++++++++ When run project main screen this http://localhost:3000 ++++++++ // 
 app.use("/",(req,res)=>{
