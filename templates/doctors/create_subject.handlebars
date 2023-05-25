@@ -1,0 +1,12 @@
+ <h1>Add Subjects to Doctor {{user.username}} </h1>
+ 
+ 
+  <form action="/doctors/{{user._id}}" method="post">
+        <select class="form-select" name="subjects">
+        <option selected>Open this select menu</option>
+        {{#each subjects}}
+          <option value="{{_id}}">{{name}}</option>
+        {{/each}}
+            </select> 
+            <button type="submit" id="add-button">Add</button>
+            </form>

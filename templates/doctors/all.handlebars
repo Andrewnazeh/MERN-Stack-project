@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Doctor</title>
+  <link rel="stylesheet" type="text/css" href="/css/admin.css">
+</head>
+
+<body>
+  <h1>Doctor</h1>
+  <ul>
+    {{#each doctors}}
+    <a href="/doctors/{{_id}}/create_subject">
+      <li>{{username}}</li>
+    </a>
+    {{/each}}
+  </ul>
+
+  <a href="/doctors/create"><button id="edit-btn">Add</button></a>
+
+</body>
+
+</html>
