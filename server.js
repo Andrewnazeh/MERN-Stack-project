@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import { engine } from "express-handlebars";
 import dotenv from "dotenv";
 import routerDepartments from './routers/departments.js';
+import routerSubjects from './routers/subjects.js';
 dotenv.config();
 
 mongoose.connect(process.env.mongConnection);
@@ -16,6 +17,9 @@ app.use(express.urlencoded({extended:true}));
 
 // ++++++++ Using route of departments ++++++++ //
 app.use("/departments", routerDepartments);
+
+// ++++++++ Using route of subjects ++++++++ //
+app.use("/subjects", routerSubjects);
 
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
