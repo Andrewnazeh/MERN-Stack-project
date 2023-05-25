@@ -5,7 +5,9 @@ import dotenv from "dotenv";
 import routerDepartments from './routers/departments.js';
 import routerSubjects from './routers/subjects.js';
 import routerDoctors from "./routers/doctors.js";
-
+import doctorRoutes from "./routers/doctorroute.js";
+import routerAuthentication from "./routers/authentication.js";
+import authentication from "./middleware/authentication.js";
 dotenv.config();
 
 mongoose.connect(process.env.mongConnection);
@@ -28,11 +30,11 @@ app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', './templates');
 
-
+app.use("/",authentication, routerAuthentication);
 // ++++++++ Using route of doctors ++++++++ //
 
 app.use("/doctors",routerDoctors);
-
+app.use("/doctorpage",authentication,doctorRoutes);
 
 // ++++++++ When run project main screen this http://localhost:3000 ++++++++ // 
 app.use("/",(req,res)=>{
